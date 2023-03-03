@@ -87,7 +87,7 @@ class Product extends Model
      */
     public function getImagesLinks(): string
     {
-        $images = Image::where('owner_type', 2)->where('owner_id', $this->id)->get();
+        $images = Image::where('owner_type', 2)->where('owner_id', $this->id)->orderBy('ordering')->get();
 
         $imagesString = "";
 
